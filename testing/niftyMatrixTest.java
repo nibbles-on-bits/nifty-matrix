@@ -10,9 +10,9 @@ public class niftyMatrixTest {
 
 	@Test
 	public void test() {
-		JunitTesting test = new JunitTesting();
-		int output = test.square(5);
-		assertEquals(25, output);
+		//JunitTesting test = new JunitTesting();
+		//int output = test.square(5);
+		//assertEquals(25, output);
 		
 		int[][] matrix_a = { { 3, 2 }, { 1, 4 } };
 		int[][] matrix_b = { { 4, 2 }, { 1, 7 } };
@@ -31,6 +31,12 @@ public class niftyMatrixTest {
 		actual = NiftyIntMatrix.multiplyIntMatrices(matrix_a, matrix_b);
 		expected = new int[][]{ { 12, 4 }, { 1, 28 } };
 		assertArrayEquals(actual, expected);
+		
+		// Test transpose
+		actual = NiftyIntMatrix.transposeMatrix(matrix_a);
+		expected = new int[][] {{3,1},{2,4}};
+		assertArrayEquals(actual, expected);
+		
 	}
 
 }

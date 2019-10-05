@@ -2,6 +2,21 @@ package niftymatrix;
 
 public class NiftyIntMatrix {
 	
+	public static int[][] transposeMatrix(int[][] matrix_a) {
+		int x_dim = matrix_a.length;
+		int y_dim = matrix_a[0].length;
+		
+		int[][] ret = new int[matrix_a.length][matrix_a[0].length];
+		
+		for (int x = 0; x < x_dim; x++) {
+			for (int y = 0; y < y_dim; y++) {
+				ret[y][x] = matrix_a[x][y];
+			}
+		}		
+		return ret;
+		
+	}
+	
 	public static int[][] multiplyIntMatrices(int[][] matrix_a, int[][] matrix_b) {
 		int x_dim = matrix_a.length;
 		int y_dim = matrix_a[0].length;
